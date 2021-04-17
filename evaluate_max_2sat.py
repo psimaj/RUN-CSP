@@ -1,5 +1,5 @@
 from model import Max_2SAT_Network
-from evaluate import evaluate_boosted, evaluate_and_save
+from evaluate import evaluate_boosted
 from csp_utils import CSP_Instance, max_2sat_language
 
 import data_utils

@@ -1,5 +1,4 @@
 from model import RUN_CSP
-from evaluate import evaluate_and_save
 from csp_utils import CSP_Instance, mc_weighted_language
 
 import data_utils
@@ -83,10 +82,7 @@ def main():
 
     net = RUN_CSP.load(args.model_dir)
 
-    if args.save_path is None:
-        conflicting_edges = evaluate_boosted(net, instances, args.t_max, attempts=args.attempts)
-    else:
-        conflicting_edges = evaluate_and_save(args.save_path, net, instances, args.t_max, attempts=args.attempts)
+    conflicting_edges = evaluate_boosted(net, instances, args.t_max, attempts=args.attempts)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 from model import RUN_CSP
-from evaluate import evaluate_and_save, evaluate_boosted
+from evaluate import evaluate_boosted
 from csp_utils import CSP_Instance, Constraint_Language
 
 import data_utils
