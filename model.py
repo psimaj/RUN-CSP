@@ -203,8 +203,9 @@ class RUN_CSP:
         :param language: A Constraint_Language instance that specifies the underlying constraint language
         :param state_size: The length of the variable state vectors
         """
+        tf.compat.v1.disable_eager_execution()
         # create session
-        self.session = tf.Session()
+        self.session = tf.compat.v1.Session()
         self.session.as_default()
 
         self.model_dir = model_dir
