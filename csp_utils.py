@@ -228,7 +228,7 @@ class CSP_Instance:
         return instance
 
     @staticmethod
-    def cnf_to_instance(formula, clause_weights=None):
+    def cnf_to_instance(formula, clause_weights=None, name=None):
         """
         :param formula: A 2-cnf formula represented as a list of lists of ints.
                         I.e. ((X1 or X2) and (not X2 or X3)) is [[1, 2], [-2, 3]]
@@ -272,5 +272,5 @@ class CSP_Instance:
 
         n_variables = np.max([np.max(np.abs(clause)) for clause in formula])
 
-        instance = CSP_Instance(max_2sat_language, n_variables, clauses, clause_weights=weights)
+        instance = CSP_Instance(max_2sat_language, n_variables, clauses, clause_weights=weights, name=name)
         return instance
